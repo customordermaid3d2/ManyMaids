@@ -37375,8 +37375,8 @@ namespace CM3D2.ManyMaids.Plugin
 			List<ManyMaids.LastParam> list = new List<ManyMaids.LastParam>();
 			BinaryReader binaryReader = new BinaryReader(new MemoryStream(cd), Encoding.UTF8);
 			string text = binaryReader.ReadString();
-			NDebug.Assert(text == "CM3D2_MENU", "ProcScriptBin 例外 : ヘッダーファイルが不正です。" + text);
-			binaryReader.ReadInt32();
+			NDebug.Assert(text == "CM3D2_MENU", "ProcScriptBin 例外 : ヘッダーファイルが不正です。" + text);//헤더 파일이 손상되었습니다
+            binaryReader.ReadInt32();
 			string path = binaryReader.ReadString();
 			binaryReader.ReadString();
 			binaryReader.ReadString();
@@ -37412,8 +37412,8 @@ namespace CM3D2.ManyMaids.Plugin
 						}
 						if (!(stringCom == "name") && !(stringCom == "set") && !(stringCom == "setname"))
 						{
-							if (stringCom == "マテリアル変更")
-							{
+							if (stringCom == "マテリアル変更") //재질 변경
+                            {
 								int num3 = int.Parse(stringList[2]);
 								if (stringList.Length == 4)
 								{
@@ -37442,16 +37442,17 @@ namespace CM3D2.ManyMaids.Plugin
 				for (int k = 0; k < list.Count; k++)
 				{
 					ManyMaids.LastParam lastParam = list[k];
-					if (lastParam.strComm == "アイテムパラメータ")
-					{
+					if (lastParam.strComm == "アイテムパラメータ") //항목 매개 변수
+                    {
 						body.GetSlot(lastParam.aryArgs[0]).SetParam(lastParam.aryArgs[1], lastParam.aryArgs[2]);
 					}
 				}
 			}
 			catch (Exception ex)
 			{
+                //메뉴 파일 처리 중에 오류가 발생했습니다.
 				NDebug.Assert("メニューファイル処理中にエラーが発生しました。" + Path.GetFileName(path), false);
-				throw ex;
+                throw ex;
 			}
 			binaryReader.Close();
 			binaryReader = null;
@@ -37466,6 +37467,7 @@ namespace CM3D2.ManyMaids.Plugin
 			{
 				try
 				{
+                    // 플러그인 끄기
 					for (int i2 = 0; i2 < array.Length; i2++)
 					{
 						if (array[i2].Name.Contains("StudioItemPlace") || array[i2].Name.Contains("StudioQuickMenu") || array[i2].Name.Contains("ChangeSkirtMotion") || array[i2].Name.Contains("DressDamage") || array[i2].Name.Contains("AutoEraseOutline") || array[i2].Name.Contains("LookAtOneMaidDance") || array[i2].Name.Contains("multiple maid"))
@@ -37473,6 +37475,7 @@ namespace CM3D2.ManyMaids.Plugin
 							array[i2].enabled = false;
 						}
 					}
+                    // 버전 체크
 					if (!this.verval)
 					{
 						this.verval = true;
@@ -38524,6 +38527,7 @@ namespace CM3D2.ManyMaids.Plugin
 						}
 					}
 				};
+
 				List<string> arg = new List<string>();
 				action(Path.GetFullPath(".\\") + "Mod\\ManyMaidsPose", arg);
 				string[] list3 = GameUty.FileSystem.GetList("motion", 3);
