@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3527AB9F-9355-418D-8778-F6BB53241D80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CM3D2.ManyMaids.Plugin</RootNamespace>
+    <AssemblyName>COM3D2.ManyMaids.Plugin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-UnityScript-firstpass">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\Assembly-UnityScript-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="CM3D2.Toolkit">
+      <HintPath>F:\COM3D2.1.32.1\Sybaris\CM3D2.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ExIni">
+      <HintPath>F:\COM3D2.1.32.1\Sybaris\ExIni.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>F:\COM3D2.1.32.1\Sybaris\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Inject">
+      <HintPath>F:\COM3D2.1.32.1\Sybaris\Mono.Cecil.Inject.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>F:\COM3D2.1.32.1\Sybaris\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="UnityEngine">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityInjector">
+      <HintPath>F:\COM3D2.1.32.1\Sybaris\UnityInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityScript.Lang">
+      <HintPath>F:\COM3D2.1.32.1\COM3D2x64_Data\Managed\UnityScript.Lang.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="ComboBox2.cs" />
+    <Compile Include="IK.cs" />
+    <Compile Include="ImportCM2.cs" />
+    <Compile Include="ManyMaids.cs" />
+    <Compile Include="MouseDrag.cs" />
+    <Compile Include="MouseDrag2.cs" />
+    <Compile Include="MouseDrag3.cs" />
+    <Compile Include="MouseDrag4.cs" />
+    <Compile Include="MouseDrag5.cs" />
+    <Compile Include="MouseDrag6.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
